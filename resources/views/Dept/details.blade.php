@@ -7,41 +7,33 @@
     <title>Document</title>
 </head>
 <body>
+  <center>
+  Name: {{$Dept->name}} <br>
+  ID: {{$Dept->id}} <br>
+  </center>
+  
+  <u>Offered Courses: <br></u>
+  <ol type='1'>
+  @foreach($Dept->courses as $course)
 
+    @foreach($course->MixCourseTeacher as $ct)
 
-        
-    Name: {{$Dept->name}}<br>
-    ID: {{$Dept->id}}   
-    <br>
-    <br>
-
-    Offered Courses:
-
-    <ol>
-    @foreach($courses as $cr)
     <li>
-      {{$cr->course->name}}, Faculty :{{$cr->teacher->name}}
-      <ol type='a'>
-      @foreach($students as $st)
-        <li>
-        @if($st->c_id==$cr->c_id)
-        {{$st->student->name}}
-        @endif
-        </li>
-        @endforeach
-      </ol>
-
+    {{$ct->Course->name}}--> {{$ct->Teacher->name}}   
     </li>
+
+    <ol type='a'>
+    @foreach($course->MixCourseStudent as $st)
+    <li>{{$st->Student->name}}</li>
     
-    @endforeach
-
+    @endforeach 
     </ol>
+    @endforeach    
+    
+    
 
-  <!-- 
-  <li>Tea</li>
-  <li>Milk</li>
-    </ol>  
-    -->
-
+  
+  @endforeach
+  </ol>
 </body>
 </html>

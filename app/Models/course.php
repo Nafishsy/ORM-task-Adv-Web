@@ -15,6 +15,16 @@ class course extends Model
 
     function Department()
     {
-        return $this->belongsTo(Department::class,'dept_id');
+        return $this->belongsTo(Dept::class,'dept_id');
+    }
+
+    function MixCourseTeacher()
+    {
+        return $this->HasMany(MappedCourseTeacher::class,'c_id');
+    }
+
+    function MixCourseStudent()
+    {
+        return $this->HasMany(MappedCourseStudent::class,'c_id');
     }
 }

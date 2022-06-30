@@ -20,12 +20,12 @@ class Dept extends Model
 
     public function teachers()
     {
-        return $this->hasMany(teacher::class,'dept_id');
+        return $this->HasMany(teacher::class,'dept_id');
     }
 
-    public function courese()
+    public function courses()
     {
-        return $this->hasMany(course::class,'dept_id');
+        return $this->HasMany(course::class,'dept_id');
     }
     
 }

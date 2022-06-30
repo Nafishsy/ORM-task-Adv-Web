@@ -25,9 +25,9 @@ class DeptController extends Controller
         $courses = MappedCourseTeacher::all();
 
         //return view('test')->with('cr',$courses);
-        return view('dept.details')->with('Dept',$Dept)
-                                ->with('courses',$courses)
-                                ->With('students',$students);
+        return view('dept.details')->with('Dept',$Dept);/*->with('Dept',$Dept);
+                               /* ->with('courses',$courses)
+                                ->With('students',$students);*/
     }
 }
 

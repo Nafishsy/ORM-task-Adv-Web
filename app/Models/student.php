@@ -16,4 +16,9 @@ class student extends Model
     {
         return $this->belongsTo(Dept::class,'dept_id');
     }
+
+    public function courses()
+    {
+        return $this->HasMany(MappedCourseStudent::class,'s_id');
+    }
 }
